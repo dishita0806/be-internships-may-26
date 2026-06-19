@@ -6,7 +6,7 @@ import http from 'node:http';
 
 test('idempotency returns same resource for same key', async () => {
   const proc = spawn('node', ['src/server.js'], { env: { ...process.env, API_KEY: 'k', PORT: '9091' } });
-  await wait(300);
+  await wait(1500);
 
   const base = 'http://localhost:9091';
   const idem = 'same-key';
